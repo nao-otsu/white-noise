@@ -14,6 +14,8 @@
 		C30FA6471FE0FF5400F1801A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C30FA6451FE0FF5400F1801A /* LaunchScreen.storyboard */; };
 		C30FA6521FE0FF5400F1801A /* WhiteNoiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30FA6511FE0FF5400F1801A /* WhiteNoiseTests.swift */; };
 		C30FA65D1FE0FF5400F1801A /* WhiteNoiseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30FA65C1FE0FF5400F1801A /* WhiteNoiseUITests.swift */; };
+		C30FA66C1FE511C400F1801A /* AudioIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30FA66B1FE511C300F1801A /* AudioIO.swift */; };
+		C30FA66E1FE84A2000F1801A /* Fft.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30FA66D1FE84A2000F1801A /* Fft.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		C30FA6581FE0FF5400F1801A /* WhiteNoiseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhiteNoiseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C30FA65C1FE0FF5400F1801A /* WhiteNoiseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteNoiseUITests.swift; sourceTree = "<group>"; };
 		C30FA65E1FE0FF5400F1801A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C30FA66B1FE511C300F1801A /* AudioIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioIO.swift; sourceTree = "<group>"; };
+		C30FA66D1FE84A2000F1801A /* Fft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fft.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				C30FA6431FE0FF5400F1801A /* Assets.xcassets */,
 				C30FA6451FE0FF5400F1801A /* LaunchScreen.storyboard */,
 				C30FA6481FE0FF5400F1801A /* Info.plist */,
+				C30FA66B1FE511C300F1801A /* AudioIO.swift */,
+				C30FA66D1FE84A2000F1801A /* Fft.swift */,
 			);
 			path = WhiteNoise;
 			sourceTree = "<group>";
@@ -259,7 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C30FA66E1FE84A2000F1801A /* Fft.swift in Sources */,
 				C30FA63F1FE0FF5400F1801A /* ViewController.swift in Sources */,
+				C30FA66C1FE511C400F1801A /* AudioIO.swift in Sources */,
 				C30FA63D1FE0FF5400F1801A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,6 +437,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9AK8Q869HS;
 				INFOPLIST_FILE = WhiteNoise/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.kadai.WhiteNoise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -444,6 +453,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9AK8Q869HS;
 				INFOPLIST_FILE = WhiteNoise/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.kadai.WhiteNoise;
 				PRODUCT_NAME = "$(TARGET_NAME)";

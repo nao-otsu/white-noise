@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,60 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WhiteNoise" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1000" minValue="1000" maxValue="15000" translatesAutoresizingMaskIntoConstraints="NO" id="oXF-8W-ewT">
+                                <rect key="frame" x="23" y="448" width="329" height="31"/>
+                                <connections>
+                                    <action selector="TouchFrequencyBar:" destination="BYZ-38-t0r" eventType="valueChanged" id="ayz-U6-uxa"/>
+                                </connections>
+                            </slider>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ocQ-dM-kM9">
+                                <rect key="frame" x="171.5" y="318" width="31" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sL-81-kC3">
+                                        <rect key="frame" x="0.0" y="0.0" width="31" height="30"/>
+                                        <state key="normal" title="再生"/>
+                                        <connections>
+                                            <action selector="TouchPlayButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RfQ-C3-m60"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLB-6k-nEQ">
+                                <rect key="frame" x="100" y="197.5" width="175" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oXF-8W-ewT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="097-Ec-C33"/>
+                            <constraint firstItem="ocQ-dM-kM9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7fx-YF-coB"/>
+                            <constraint firstItem="ocQ-dM-kM9" firstAttribute="top" secondItem="fLB-6k-nEQ" secondAttribute="bottom" constant="100" id="DfG-YP-wSD"/>
+                            <constraint firstItem="ocQ-dM-kM9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EKE-xt-qMq"/>
+                            <constraint firstItem="fLB-6k-nEQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="Iag-D1-db1"/>
+                            <constraint firstItem="oXF-8W-ewT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iSa-Yr-aSY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fLB-6k-nEQ" secondAttribute="trailing" constant="100" id="o2Z-3P-PcQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oXF-8W-ewT" secondAttribute="trailing" constant="25" id="oh8-9d-FM1"/>
+                            <constraint firstItem="oXF-8W-ewT" firstAttribute="top" secondItem="ocQ-dM-kM9" secondAttribute="bottom" constant="100" id="pi0-sB-9tY"/>
+                            <constraint firstItem="fLB-6k-nEQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qnb-D7-6FU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="frequencyBar" destination="oXF-8W-ewT" id="bkH-Zm-ETv"/>
+                        <outlet property="frequencyValueLabel" destination="fLB-6k-nEQ" id="It2-Od-15Z"/>
+                        <outlet property="playButton" destination="9sL-81-kC3" id="1kd-C1-6ZJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
